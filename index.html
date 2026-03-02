@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Expense Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Smart Expense Tracker</h1>
+
+    <form method="post">
+        <input type="text" name="description" placeholder="Expense description" required>
+        <input type="number" name="amount" placeholder="Amount" required>
+        <button>Add Expense</button>
+    </form>
+
+    <h2>Category-wise Spending</h2>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Total Amount</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>₹ {{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
